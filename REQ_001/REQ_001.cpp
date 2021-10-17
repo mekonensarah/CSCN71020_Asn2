@@ -26,7 +26,6 @@ namespace REQ001
 			Assert::AreEqual(178, perimeter);
 
 		}
-
 		TEST_METHOD(getAreaFunction_)
 		{
 			//testing area function using 4 as length and 99 as width to equal 396 area
@@ -37,7 +36,63 @@ namespace REQ001
 			Assert::AreEqual(396, area);
 
 		}
-		
+		TEST_METHOD(setLengthFunction_1)
+		{
+			//testing length function using length of 98 and input of 6 
+			int length = 98;
+			int input = 6;
+			setLength(input, &length);
+			Assert::AreEqual(input, length);
+
+		}
+
+		TEST_METHOD(setLengthFuction_2)
+		{
+			//testing length function by using length of 44 and input of -4 which are not equal 
+			int length = 44;
+			int input = -4;
+			setLength(input, &length);
+			Assert::AreNotSame(input, length);
+
+		}
+
+		TEST_METHOD(setLengthFunction_3)
+		{
+			//testing length function by using length of 198 and input of 3 which are not equal
+			int length = 198;
+			int input = 100;
+			setLength(input, &length);
+			Assert::AreNotEqual(input, length);
+
+		}
+
+		TEST_METHOD(setWidthFunction_1)
+		{
+			//testing width function using width of 4 and input of 87  
+			int width = 4;
+			int input = 87;
+			setWidth(input, &width);
+			Assert::IsTrue(input == width);
+		}
+
+		TEST_METHOD(setWidthFunction_2)
+		{
+			//testing width function by using width of 164 and input of 12 which are not equal
+			int width = 164;
+			int input = -34;
+			setWidth(input, &width);
+			Assert::AreNotSame(input, width);
+		}
+
+		TEST_METHOD(setWidthFunction_3)
+		{
+			//testing length function by using width of -27 and input of 187 which are not equal
+			int width = -27;
+			int input = 187;
+			setWidth(input, &width);
+			Assert::AreNotEqual(input, width);
+
+		}
 
 	};
 }
